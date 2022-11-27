@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,10 @@
 		D04E67A529219B3E0058BC48 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D04E67A429219B3E0058BC48 /* Preview Assets.xcassets */; };
 		D04E67B029219B3F0058BC48 /* IshqTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04E67AF29219B3F0058BC48 /* IshqTests.swift */; };
 		D04E67BB29219B3F0058BC48 /* IshqUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04E67BA29219B3F0058BC48 /* IshqUITests.swift */; };
+		D085895B2932D002004F555A /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = D085895A2932D002004F555A /* Realm */; };
+		D085895D2932D002004F555A /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D085895C2932D002004F555A /* RealmSwift */; };
+		D08589602932FE59004F555A /* SignInWithAppleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D085895F2932FE59004F555A /* SignInWithAppleView.swift */; };
+		D08589632932FF43004F555A /* SignInWithAppleCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08589622932FF43004F555A /* SignInWithAppleCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +49,9 @@
 		D04E67B629219B3F0058BC48 /* IshqUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IshqUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D04E67BA29219B3F0058BC48 /* IshqUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IshqUITests.swift; sourceTree = "<group>"; };
 		D04E67BC29219B3F0058BC48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D05104F5293282600081DE21 /* Ishq.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Ishq.entitlements; sourceTree = "<group>"; };
+		D085895F2932FE59004F555A /* SignInWithAppleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleView.swift; sourceTree = "<group>"; };
+		D08589622932FF43004F555A /* SignInWithAppleCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +59,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D085895D2932D002004F555A /* RealmSwift in Frameworks */,
+				D085895B2932D002004F555A /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +104,9 @@
 		D04E679C29219B370058BC48 /* Ishq */ = {
 			isa = PBXGroup;
 			children = (
+				D08589612932FF1C004F555A /* AuthCoordinators */,
+				D085895E2932FE3E004F555A /* AuthViews */,
+				D05104F5293282600081DE21 /* Ishq.entitlements */,
 				D04E679D29219B370058BC48 /* IshqApp.swift */,
 				D04E679F29219B370058BC48 /* ContentView.swift */,
 				D04E67A129219B3E0058BC48 /* Assets.xcassets */,
@@ -130,6 +142,22 @@
 			path = IshqUITests;
 			sourceTree = "<group>";
 		};
+		D085895E2932FE3E004F555A /* AuthViews */ = {
+			isa = PBXGroup;
+			children = (
+				D085895F2932FE59004F555A /* SignInWithAppleView.swift */,
+			);
+			path = AuthViews;
+			sourceTree = "<group>";
+		};
+		D08589612932FF1C004F555A /* AuthCoordinators */ = {
+			isa = PBXGroup;
+			children = (
+				D08589622932FF43004F555A /* SignInWithAppleCoordinator.swift */,
+			);
+			path = AuthCoordinators;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,6 +174,10 @@
 			dependencies = (
 			);
 			name = Ishq;
+			packageProductDependencies = (
+				D085895A2932D002004F555A /* Realm */,
+				D085895C2932D002004F555A /* RealmSwift */,
+			);
 			productName = Ishq;
 			productReference = D04E679A29219B370058BC48 /* Ishq.app */;
 			productType = "com.apple.product-type.application";
@@ -217,6 +249,9 @@
 				Base,
 			);
 			mainGroup = D04E679129219B370058BC48;
+			packageReferences = (
+				D08589592932D002004F555A /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = D04E679B29219B370058BC48 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -261,6 +296,8 @@
 			files = (
 				D04E67A029219B370058BC48 /* ContentView.swift in Sources */,
 				D04E679E29219B370058BC48 /* IshqApp.swift in Sources */,
+				D08589632932FF43004F555A /* SignInWithAppleCoordinator.swift in Sources */,
+				D08589602932FE59004F555A /* SignInWithAppleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,9 +454,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Ishq/Ishq.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Ishq/Preview Content\"";
-				DEVELOPMENT_TEAM = J76HZ8P9J7;
+				DEVELOPMENT_TEAM = 96C79E7E69;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Ishq/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -427,7 +465,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.findIshq.Ishq;
+				PRODUCT_BUNDLE_IDENTIFIER = org.wedinvyte.ishq;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -439,9 +477,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Ishq/Ishq.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Ishq/Preview Content\"";
-				DEVELOPMENT_TEAM = J76HZ8P9J7;
+				DEVELOPMENT_TEAM = 96C79E7E69;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Ishq/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -449,7 +488,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.findIshq.Ishq;
+				PRODUCT_BUNDLE_IDENTIFIER = org.wedinvyte.ishq;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -580,6 +619,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D08589592932D002004F555A /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.32.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D085895A2932D002004F555A /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D08589592932D002004F555A /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		D085895C2932D002004F555A /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D08589592932D002004F555A /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D04E679229219B370058BC48 /* Project object */;
 }
