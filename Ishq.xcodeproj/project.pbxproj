@@ -27,6 +27,10 @@
 		D04E67A529219B3E0058BC48 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D04E67A429219B3E0058BC48 /* Preview Assets.xcassets */; };
 		D04E67B029219B3F0058BC48 /* IshqTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04E67AF29219B3F0058BC48 /* IshqTests.swift */; };
 		D04E67BB29219B3F0058BC48 /* IshqUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04E67BA29219B3F0058BC48 /* IshqUITests.swift */; };
+		D085895B2932D002004F555A /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = D085895A2932D002004F555A /* Realm */; };
+		D085895D2932D002004F555A /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D085895C2932D002004F555A /* RealmSwift */; };
+		D08589602932FE59004F555A /* SignInWithAppleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D085895F2932FE59004F555A /* SignInWithAppleView.swift */; };
+		D08589632932FF43004F555A /* SignInWithAppleCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08589622932FF43004F555A /* SignInWithAppleCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +68,9 @@
 		D04E67B629219B3F0058BC48 /* IshqUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IshqUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D04E67BA29219B3F0058BC48 /* IshqUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IshqUITests.swift; sourceTree = "<group>"; };
 		D04E67BC29219B3F0058BC48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D05104F5293282600081DE21 /* Ishq.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Ishq.entitlements; sourceTree = "<group>"; };
+		D085895F2932FE59004F555A /* SignInWithAppleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleView.swift; sourceTree = "<group>"; };
+		D08589622932FF43004F555A /* SignInWithAppleCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +88,8 @@
 				3AA7D947292335F700BD6E2B /* FirebaseAuthCombine-Community in Frameworks */,
 				3AF309AF29341C2B003D1301 /* RealmSwift in Frameworks */,
 				3AA7D949292335F700BD6E2B /* FirebaseDynamicLinks in Frameworks */,
+				D085895D2932D002004F555A /* RealmSwift in Frameworks */,
+				D085895B2932D002004F555A /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,6 +153,9 @@
 				3AF309A82932B814003D1301 /* Ishq.entitlements */,
 				3A728925292FE50A00158275 /* ViewModel */,
 				3AA7D94E2924899C00BD6E2B /* Views */,
+				D08589612932FF1C004F555A /* AuthCoordinators */,
+				D085895E2932FE3E004F555A /* AuthViews */,
+				D05104F5293282600081DE21 /* Ishq.entitlements */,
 				D04E679D29219B370058BC48 /* IshqApp.swift */,
 				D04E67A129219B3E0058BC48 /* Assets.xcassets */,
 				3AF309A92932E780003D1301 /* GoogleService-Info.plist */,
@@ -180,6 +192,22 @@
 			path = IshqUITests;
 			sourceTree = "<group>";
 		};
+		D085895E2932FE3E004F555A /* AuthViews */ = {
+			isa = PBXGroup;
+			children = (
+				D085895F2932FE59004F555A /* SignInWithAppleView.swift */,
+			);
+			path = AuthViews;
+			sourceTree = "<group>";
+		};
+		D08589612932FF1C004F555A /* AuthCoordinators */ = {
+			isa = PBXGroup;
+			children = (
+				D08589622932FF43004F555A /* SignInWithAppleCoordinator.swift */,
+			);
+			path = AuthCoordinators;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -207,6 +235,8 @@
 				3A72892B2930419200158275 /* iPhoneNumberField */,
 				3AF309AC29341C2B003D1301 /* Realm */,
 				3AF309AE29341C2B003D1301 /* RealmSwift */,
+				D085895A2932D002004F555A /* Realm */,
+				D085895C2932D002004F555A /* RealmSwift */,
 			);
 			productName = Ishq;
 			productReference = D04E679A29219B370058BC48 /* Ishq.app */;
@@ -283,6 +313,7 @@
 				3AA7D93F292335F600BD6E2B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				3A72892A2930419200158275 /* XCRemoteSwiftPackageReference "iPhoneNumberField" */,
 				3AF309AB29341C2B003D1301 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				D08589592932D002004F555A /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = D04E679B29219B370058BC48 /* Products */;
 			projectDirPath = "";
@@ -332,6 +363,8 @@
 				D04E679E29219B370058BC48 /* IshqApp.swift in Sources */,
 				3A213553292D68BB00C3CB16 /* ContentView.swift in Sources */,
 				3A728929292FE5CE00158275 /* PhoneAuthViewModel.swift in Sources */,
+				D08589632932FF43004F555A /* SignInWithAppleCoordinator.swift in Sources */,
+				D08589602932FE59004F555A /* SignInWithAppleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -676,6 +709,7 @@
 			};
 		};
 		3AF309AB29341C2B003D1301 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+		D08589592932D002004F555A /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
 			requirement = {
@@ -734,6 +768,14 @@
 		3AF309AE29341C2B003D1301 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3AF309AB29341C2B003D1301 /* XCRemoteSwiftPackageReference "realm-swift" */;
+		D085895A2932D002004F555A /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D08589592932D002004F555A /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		D085895C2932D002004F555A /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D08589592932D002004F555A /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */

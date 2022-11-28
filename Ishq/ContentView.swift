@@ -6,6 +6,12 @@
 //
 
 import SwiftUI
+import AuthenticationServices
+import RealmSwift
+
+let appId = "ishq-uywcj"
+@State var accessToken: String = ""
+@State var error: String = ""
 
 @available(iOS 15.0, *)
 struct ContentView: View {
@@ -16,6 +22,12 @@ struct ContentView: View {
                 Text("Home").navigationTitle("Home")
             } else {
                 PhoneAuthentication()
+                VStack {
+            SignInWithAppleView(accessToken: $accessToken, error: $error)
+                .frame(width: 200, height: 50, alignment: .center)
+            Text(self.accessToken)
+            Text(self.error)
+        }
             }
         }
         
