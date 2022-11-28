@@ -19,8 +19,6 @@
 		3AA7D94B292335F700BD6E2B /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 3AA7D94A292335F700BD6E2B /* FirebaseMessaging */; };
 		3AA7D94D292335F700BD6E2B /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 3AA7D94C292335F700BD6E2B /* FirebaseStorage */; };
 		3AF309AA2932E780003D1301 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AF309A92932E780003D1301 /* GoogleService-Info.plist */; };
-		3AF309AD29341C2B003D1301 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 3AF309AC29341C2B003D1301 /* Realm */; };
-		3AF309AF29341C2B003D1301 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3AF309AE29341C2B003D1301 /* RealmSwift */; };
 		D04E679E29219B370058BC48 /* IshqApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04E679D29219B370058BC48 /* IshqApp.swift */; };
 		D04E67A029219B370058BC48 /* PhoneAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04E679F29219B370058BC48 /* PhoneAuthentication.swift */; };
 		D04E67A229219B3E0058BC48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D04E67A129219B3E0058BC48 /* Assets.xcassets */; };
@@ -84,9 +82,7 @@
 				3AA7D945292335F700BD6E2B /* FirebaseAuth in Frameworks */,
 				3AA7D941292335F700BD6E2B /* FirebaseAnalytics in Frameworks */,
 				3AA7D94D292335F700BD6E2B /* FirebaseStorage in Frameworks */,
-				3AF309AD29341C2B003D1301 /* Realm in Frameworks */,
 				3AA7D947292335F700BD6E2B /* FirebaseAuthCombine-Community in Frameworks */,
-				3AF309AF29341C2B003D1301 /* RealmSwift in Frameworks */,
 				3AA7D949292335F700BD6E2B /* FirebaseDynamicLinks in Frameworks */,
 				D085895D2932D002004F555A /* RealmSwift in Frameworks */,
 				D085895B2932D002004F555A /* Realm in Frameworks */,
@@ -233,8 +229,6 @@
 				3AA7D94A292335F700BD6E2B /* FirebaseMessaging */,
 				3AA7D94C292335F700BD6E2B /* FirebaseStorage */,
 				3A72892B2930419200158275 /* iPhoneNumberField */,
-				3AF309AC29341C2B003D1301 /* Realm */,
-				3AF309AE29341C2B003D1301 /* RealmSwift */,
 				D085895A2932D002004F555A /* Realm */,
 				D085895C2932D002004F555A /* RealmSwift */,
 			);
@@ -708,7 +702,6 @@
 				minimumVersion = 9.0.0;
 			};
 		};
-		3AF309AB29341C2B003D1301 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 		D08589592932D002004F555A /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
@@ -760,14 +753,6 @@
 			package = 3AA7D93F292335F600BD6E2B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
 		};
-		3AF309AC29341C2B003D1301 /* Realm */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3AF309AB29341C2B003D1301 /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = Realm;
-		};
-		3AF309AE29341C2B003D1301 /* RealmSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3AF309AB29341C2B003D1301 /* XCRemoteSwiftPackageReference "realm-swift" */;
 		D085895A2932D002004F555A /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D08589592932D002004F555A /* XCRemoteSwiftPackageReference "realm-swift" */;
