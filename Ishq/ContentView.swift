@@ -10,11 +10,12 @@ import AuthenticationServices
 import RealmSwift
 
 let appId = "ishq-uywcj"
-@State var accessToken: String = ""
-@State var error: String = ""
+
 
 @available(iOS 15.0, *)
 struct ContentView: View {
+    @State var accessToken: String = ""
+    @State var error: String = ""
     @AppStorage("auth_status") var auth_status = false
     var body: some View {
         NavigationView {

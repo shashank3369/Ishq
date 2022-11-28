@@ -57,7 +57,7 @@ class PhoneAuthViewModel: ObservableObject {
             print("ATTEMPTING TO VERIFY CODE")
             let credential = PhoneAuthProvider.provider().credential(withVerificationID: verificationCode, verificationCode: otpText)
             let _ = try await Auth.auth().signIn(with: credential)
-            let firebaseAuthToken = Auth.auth().currentUser?.getIDToken()
+            guard let firebaseAuthToken = try await Auth.auth().currentUser?.getIDToken() else { return <#default value#> }
             let realmCredentials = Credentials.jwt(token: firebaseAuthToken)
             app.login(credentials: realmCredentials, { (result) in})
             DispatchQueue.main.async {[self] in

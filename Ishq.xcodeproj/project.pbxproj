@@ -109,7 +109,6 @@
 		3A728925292FE50A00158275 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				3A728928292FE5CE00158275 /* PhoneAuthViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -117,8 +116,6 @@
 		3AA7D94E2924899C00BD6E2B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D04E679F29219B370058BC48 /* PhoneAuthentication.swift */,
-				3A72892D29304A4C00158275 /* PhoneVerification.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -191,6 +188,8 @@
 		D085895E2932FE3E004F555A /* AuthViews */ = {
 			isa = PBXGroup;
 			children = (
+				D04E679F29219B370058BC48 /* PhoneAuthentication.swift */,
+				3A72892D29304A4C00158275 /* PhoneVerification.swift */,
 				D085895F2932FE59004F555A /* SignInWithAppleView.swift */,
 			);
 			path = AuthViews;
@@ -199,6 +198,7 @@
 		D08589612932FF1C004F555A /* AuthCoordinators */ = {
 			isa = PBXGroup;
 			children = (
+				3A728928292FE5CE00158275 /* PhoneAuthViewModel.swift */,
 				D08589622932FF43004F555A /* SignInWithAppleCoordinator.swift */,
 			);
 			path = AuthCoordinators;
@@ -306,7 +306,6 @@
 			packageReferences = (
 				3AA7D93F292335F600BD6E2B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				3A72892A2930419200158275 /* XCRemoteSwiftPackageReference "iPhoneNumberField" */,
-				3AF309AB29341C2B003D1301 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				D08589592932D002004F555A /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = D04E679B29219B370058BC48 /* Products */;
