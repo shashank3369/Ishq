@@ -9,7 +9,7 @@ import SwiftUI
 
 @available(iOS 15.0, *)
 struct PhoneVerification: View {
-    @EnvironmentObject var phoneAuthData: PhoneAuthViewModel
+    @EnvironmentObject var phoneAuthData: SignInWithPhoneNumberCoordinator
     @Environment(\.presentationMode) var present
     //MARK: TextField FocusState
     @FocusState var activeField: OTPField?
@@ -123,7 +123,7 @@ struct PhoneVerification: View {
 @available(iOS 15.0, *)
 struct PhoneVerification_Previews: PreviewProvider {
     static var previews: some View {
-        PhoneVerification().environmentObject(PhoneAuthViewModel())
+        PhoneVerification().environmentObject(SignInWithPhoneNumberCoordinator())
     }
 }
 

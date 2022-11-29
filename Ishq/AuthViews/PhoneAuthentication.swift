@@ -10,7 +10,7 @@ import iPhoneNumberField
 
 @available(iOS 15.0, *)
 struct PhoneAuthentication: View {
-    @StateObject var phoneAuthData = PhoneAuthViewModel()
+    @StateObject var phoneAuthData = SignInWithPhoneNumberCoordinator()
     @State var isEditing: Bool = false
     @available(iOS 15.0, *)
     var body: some View {
