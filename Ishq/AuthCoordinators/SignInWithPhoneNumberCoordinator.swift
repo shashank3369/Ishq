@@ -142,7 +142,9 @@ class SignInWithPhoneNumberCoordinator: ObservableObject {
     
     func logOut() {
         do {
-            try Auth.auth().signOut()
+            if((Auth.auth().currentUser) != nil) { //if there is a firebase user (phoneAuth), log them out
+                try Auth.auth().signOut()
+            }
             app.currentUser?.logOut { [self] (error) in
                 print("It reached inside log out")
                 DispatchQueue.main.async { [self] in
