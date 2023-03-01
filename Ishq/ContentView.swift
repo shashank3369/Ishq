@@ -14,6 +14,7 @@ let appId = "ishq-uywcj"
 
 @available(iOS 15.0, *)
 struct ContentView: View {
+    @Environment(\.colorScheme) var colorScheme
     @State var accessToken: String = ""
     @State var error: String = ""
     @AppStorage("auth_status") var auth_status = false
@@ -22,18 +23,7 @@ struct ContentView: View {
             if auth_status{
                 HomeScreen()
             } else {
-                
-            VStack {
-            SignInWithAppleView(accessToken: $accessToken, error: $error)
-                .frame(width: 200, height: 50, alignment: .center)
-            Text(self.accessToken)
-            Text(self.error)
-                NavigationLink(destination: PhoneAuthentication()) {
-                    Text("Sign in with Phone Number")
-                }
-                
-                
-        }
+                LoginView()
             }
         }
         

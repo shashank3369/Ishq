@@ -141,7 +141,7 @@ struct CodeView: View {
     var code: String
     var body: some View{
         VStack(spacing: 10) {
-            Text(code).foregroundColor(.black).fontWeight(.bold).font(.title2).frame(height: 45).keyboardType(.numberPad)
+            Text(code).foregroundColor(Color.black).fontWeight(.bold).font(.title2).frame(height: 45).keyboardType(.numberPad)
             
             Capsule().fill(Color.gray.opacity(0.5)).frame( height: 4)
         }

@@ -13,6 +13,8 @@
 		3A728929292FE5CE00158275 /* SignInWithPhoneNumberCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A728928292FE5CE00158275 /* SignInWithPhoneNumberCoordinator.swift */; };
 		3A72892C2930419200158275 /* iPhoneNumberField in Frameworks */ = {isa = PBXBuildFile; productRef = 3A72892B2930419200158275 /* iPhoneNumberField */; };
 		3A72892E29304A4C00158275 /* PhoneVerification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A72892D29304A4C00158275 /* PhoneVerification.swift */; };
+		3A94F27929AC0E3D00EB4D99 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A94F27829AC0E3D00EB4D99 /* LoginView.swift */; };
+		3A94F27C29AD5A4F00EB4D99 /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A94F27B29AD5A4F00EB4D99 /* ColorManager.swift */; };
 		3AA7D941292335F700BD6E2B /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 3AA7D940292335F700BD6E2B /* FirebaseAnalytics */; };
 		3AA7D943292335F700BD6E2B /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3AA7D942292335F700BD6E2B /* FirebaseAnalyticsSwift */; };
 		3AA7D945292335F700BD6E2B /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 3AA7D944292335F700BD6E2B /* FirebaseAuth */; };
@@ -56,6 +58,8 @@
 		3A3AA96329A2D1F00010637C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A728928292FE5CE00158275 /* SignInWithPhoneNumberCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithPhoneNumberCoordinator.swift; sourceTree = "<group>"; };
 		3A72892D29304A4C00158275 /* PhoneVerification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneVerification.swift; sourceTree = "<group>"; };
+		3A94F27829AC0E3D00EB4D99 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		3A94F27B29AD5A4F00EB4D99 /* ColorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
 		3AF309A82932B814003D1301 /* Ishq.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Ishq.entitlements; sourceTree = "<group>"; };
 		3AF309A92932E780003D1301 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D04E679A29219B370058BC48 /* Ishq.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ishq.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,10 +129,19 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		3A94F27A29AD59E400EB4D99 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				3A94F27B29AD5A4F00EB4D99 /* ColorManager.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		3AA7D94E2924899C00BD6E2B /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				3A17B37E293AE383005AAB8D /* HomeScreen.swift */,
+				3A94F27829AC0E3D00EB4D99 /* LoginView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -156,6 +169,7 @@
 		D04E679C29219B370058BC48 /* Ishq */ = {
 			isa = PBXGroup;
 			children = (
+				3A94F27A29AD59E400EB4D99 /* Helpers */,
 				3A3AA96229A2CFC80010637C /* Launch */,
 				3AF309A82932B814003D1301 /* Ishq.entitlements */,
 				3A728925292FE50A00158275 /* ViewModel */,
@@ -367,8 +381,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D04E67A029219B370058BC48 /* PhoneAuthentication.swift in Sources */,
+				3A94F27C29AD5A4F00EB4D99 /* ColorManager.swift in Sources */,
 				3A72892E29304A4C00158275 /* PhoneVerification.swift in Sources */,
 				D04E679E29219B370058BC48 /* IshqApp.swift in Sources */,
+				3A94F27929AC0E3D00EB4D99 /* LoginView.swift in Sources */,
 				3A213553292D68BB00C3CB16 /* ContentView.swift in Sources */,
 				3A17B37F293AE383005AAB8D /* HomeScreen.swift in Sources */,
 				3A728929292FE5CE00158275 /* SignInWithPhoneNumberCoordinator.swift in Sources */,
