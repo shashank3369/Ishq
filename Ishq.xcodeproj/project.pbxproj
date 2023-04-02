@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		3A17B37F293AE383005AAB8D /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A17B37E293AE383005AAB8D /* HomeScreen.swift */; };
+		3A1B0BBF29B4554A00BF685B /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A1B0BBE29B4554900BF685B /* Inter-Regular.ttf */; };
+		3A1B0BC129B4557600BF685B /* LibreBaskerville-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A1B0BC029B4557600BF685B /* LibreBaskerville-Regular.ttf */; };
+		3A1B0BC329B455AB00BF685B /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A1B0BC229B455AB00BF685B /* Poppins-Regular.ttf */; };
+		3A1B0BC529B5383C00BF685B /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1B0BC429B5383B00BF685B /* FontManager.swift */; };
 		3A213553292D68BB00C3CB16 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A213552292D68BB00C3CB16 /* ContentView.swift */; };
 		3A3AA96429A2D1F00010637C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A3AA96329A2D1F00010637C /* LaunchScreen.storyboard */; };
 		3A728929292FE5CE00158275 /* SignInWithPhoneNumberCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A728928292FE5CE00158275 /* SignInWithPhoneNumberCoordinator.swift */; };
@@ -54,6 +58,10 @@
 
 /* Begin PBXFileReference section */
 		3A17B37E293AE383005AAB8D /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		3A1B0BBE29B4554900BF685B /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-Regular.ttf"; path = "../../../../Downloads/Inter/static/Inter-Regular.ttf"; sourceTree = "<group>"; };
+		3A1B0BC029B4557600BF685B /* LibreBaskerville-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "LibreBaskerville-Regular.ttf"; path = "../../../../Downloads/Libre_Baskerville/LibreBaskerville-Regular.ttf"; sourceTree = "<group>"; };
+		3A1B0BC229B455AB00BF685B /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Poppins-Regular.ttf"; path = "../../../../Downloads/Poppins/Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		3A1B0BC429B5383B00BF685B /* FontManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
 		3A213552292D68BB00C3CB16 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3A3AA96329A2D1F00010637C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A728928292FE5CE00158275 /* SignInWithPhoneNumberCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithPhoneNumberCoordinator.swift; sourceTree = "<group>"; };
@@ -114,6 +122,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A1B0BBD29B454B800BF685B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				3A1B0BC229B455AB00BF685B /* Poppins-Regular.ttf */,
+				3A1B0BC029B4557600BF685B /* LibreBaskerville-Regular.ttf */,
+				3A1B0BBE29B4554900BF685B /* Inter-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		3A3AA96229A2CFC80010637C /* Launch */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				3A94F27B29AD5A4F00EB4D99 /* ColorManager.swift */,
+				3A1B0BC429B5383B00BF685B /* FontManager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -169,6 +188,7 @@
 		D04E679C29219B370058BC48 /* Ishq */ = {
 			isa = PBXGroup;
 			children = (
+				3A1B0BBD29B454B800BF685B /* Fonts */,
 				3A94F27A29AD59E400EB4D99 /* Helpers */,
 				3A3AA96229A2CFC80010637C /* Launch */,
 				3AF309A82932B814003D1301 /* Ishq.entitlements */,
@@ -353,7 +373,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D04E67A529219B3E0058BC48 /* Preview Assets.xcassets in Resources */,
+				3A1B0BBF29B4554A00BF685B /* Inter-Regular.ttf in Resources */,
+				3A1B0BC329B455AB00BF685B /* Poppins-Regular.ttf in Resources */,
 				3A3AA96429A2D1F00010637C /* LaunchScreen.storyboard in Resources */,
+				3A1B0BC129B4557600BF685B /* LibreBaskerville-Regular.ttf in Resources */,
 				D04E67A229219B3E0058BC48 /* Assets.xcassets in Resources */,
 				3AF309AA2932E780003D1301 /* GoogleService-Info.plist in Resources */,
 			);
@@ -386,6 +409,7 @@
 				D04E679E29219B370058BC48 /* IshqApp.swift in Sources */,
 				3A94F27929AC0E3D00EB4D99 /* LoginView.swift in Sources */,
 				3A213553292D68BB00C3CB16 /* ContentView.swift in Sources */,
+				3A1B0BC529B5383C00BF685B /* FontManager.swift in Sources */,
 				3A17B37F293AE383005AAB8D /* HomeScreen.swift in Sources */,
 				3A728929292FE5CE00158275 /* SignInWithPhoneNumberCoordinator.swift in Sources */,
 				D08589632932FF43004F555A /* SignInWithAppleCoordinator.swift in Sources */,

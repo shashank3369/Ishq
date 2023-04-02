@@ -23,7 +23,7 @@ class SignInWithPhoneNumberCoordinator: ObservableObject {
     //MARK: OTP Credentials
     @Published var verificationCode: String = ""
     
-    @Published var isLoading: Bool = false
+    @Published var isLoading: Bool = true
     
     @Published var navigationTag: String?
     @AppStorage("auth_status") var auth_status = false
@@ -32,9 +32,13 @@ class SignInWithPhoneNumberCoordinator: ObservableObject {
     //Mark: Sending OTP
     func sendOTP()async{
         do{
+            DispatchQueue.main.async {
+                self.isLoading = true
+            }
+            
             print("Attempting to send phone number ")
             let result = try await PhoneAuthProvider.provider().verifyPhoneNumber("+1\(phoneNumber)", uiDelegate: nil)
-            DispatchQueue.main.async {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
                 self.isLoading = false
                 self.verificationCode = result
                 self.navigationTag = "PHONE_VERIFICATION"
@@ -54,6 +58,7 @@ class SignInWithPhoneNumberCoordinator: ObservableObject {
     
     func verifyOTP()async{
         do{
+            self.isLoading = true
             print("ATTEMPTING TO VERIFY CODE")
             let credential = PhoneAuthProvider.provider().credential(withVerificationID: verificationCode, verificationCode: otpText)
             let _ = try await Auth.auth().signIn(with: credential)
@@ -61,6 +66,7 @@ class SignInWithPhoneNumberCoordinator: ObservableObject {
                                 if error == nil { // option 1: Firebase and Realm sign in both were successful
                                     DispatchQueue.main.async { [self] in
                                        auth_status = true
+                                        self.isLoading = false
                                     }
                                 } else { // option 2: an error occured signing in to Realm
                                     DispatchQueue.main.async {

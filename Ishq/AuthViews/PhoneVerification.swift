@@ -11,31 +11,86 @@ import SwiftUI
 struct PhoneVerification: View {
     @EnvironmentObject var phoneAuthData: SignInWithPhoneNumberCoordinator
     @Environment(\.presentationMode) var present
+    @Environment(\.dismiss) private var dismiss
+
     //MARK: TextField FocusState
     @FocusState var activeField: OTPField?
+    @FocusState private var keyboardFocused: Bool
     var body: some View {
-        VStack{
-            OTPField()
-            
-            Button {
-                Task{await phoneAuthData.verifyOTP()}
-            } label: {
-                Text("Verify").fontWeight(.semibold).foregroundColor(.white).padding(.vertical, 12).frame(maxWidth: .infinity).background{RoundedRectangle(cornerRadius: 10, style: .continuous).fill(.blue)}
-                    .padding().disabled(checkStates()).opacity(checkStates() ? 0.4 : 1)
-            }.padding(.vertical)
-            
-            HStack(spacing: 12){
-                Text("Didn't get a code?").font(.caption).foregroundColor(.gray)
+        ZStack {
+            Color.ishqBackgroundColor.ignoresSafeArea()
+            VStack {
+                VStack{
+                    HStack {
+                        Spacer()
+                        
+                        Button {
+                            dismiss()
+                        } label: {
+                            Image("close").padding(.horizontal, 5)
+                                .padding(.vertical, 5).background(Color.ishqBackgroundColor)
+                        }.padding(.trailing, 0)
+                    }
+                    HStack {
+                        Text("Enter your verification code.").font(.BaskervilleTitle).foregroundColor(.ishqTextColor).padding()
+                        Spacer()
+                    }.padding()
+                    HStack {
+                        VStack(alignment: .leading, spacing: 10) {
+                            OTPField().focused($keyboardFocused).keyboardType(.numberPad).onAppear {
+                                                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                                                                    keyboardFocused = true
+                                                                }
+                                                            }
+                            
+
+                            HStack {
+                                Text("Ishq will send you a text with a verification code. Message and data rates may apply.").font(.InterBody).fixedSize(horizontal: false, vertical: true).foregroundColor(Color.gray).padding()
+                            }
+                           
+                            
+                            HStack {
+                                Spacer()
+                                Group {
+                                    if phoneAuthData.isLoading {
+                                        Circle()
+                                                          .trim(from: 0, to: 0.4)
+                                                          .stroke(style: StrokeStyle(lineWidth: 2, lineCap: .round, lineJoin: .round))
+                                                          .foregroundColor(.callToActionColor)
+                                                          .frame(width: 25, height: 25)
+                                                          .rotationEffect(Angle(degrees: phoneAuthData.isLoading ? 0 : 360))
+                                                          .animation(Animation.linear(duration: 1).repeatForever(autoreverses: false))
+                                    } else {
+                                        Button {
+                                                        Task{await phoneAuthData.verifyOTP()}
+                                                    } label: {
+                                                        Image("chevron-right").padding(.horizontal, 20)
+                                        
+                                                            .padding(.vertical, 20).background(Color.callToActionColor).cornerRadius(40)
+                                                    }.padding(.trailing, 15)
+                                    }
+                                }
+                                
+                                
+                            }
+                        }.padding().background(Color.ishqBackgroundColor)
+                    }
+                    
+                }.frame(height: UIScreen.main.bounds.height/1.8).background(Color.ishqBackgroundColor).cornerRadius(20)
                 
-                Button("Resend"){}.font(.callout)
-            }.frame(maxWidth: .infinity, alignment: .leading)
-        }.padding().frame(maxHeight: .infinity, alignment: .center).navigationTitle("Verification").onChange(of: phoneAuthData.otpFields) { newValue in OTPCondition(value: newValue)
+                Spacer()
+                
+            }.background(Color.ishqBackgroundColor).frame(maxHeight: .infinity, alignment: .top).navigationBarBackButtonHidden(true).navigationBarHidden(true).padding().navigationTitle("Verification").onChange(of: phoneAuthData.otpFields) { newValue in OTPCondition(value: newValue)
+                
+            }.alert(phoneAuthData.errorMsg, isPresented: $phoneAuthData.showAlert) {
+
             
-        }.alert(phoneAuthData.errorMsg, isPresented: $phoneAuthData.showAlert) {
+            }
             
         }
-
+        
     }
+    
     
     func checkStates()->Bool{
         for index in 0..<6{
@@ -93,16 +148,20 @@ struct PhoneVerification: View {
         return ""
     }
     
+ 
+    
     @ViewBuilder
     func OTPField()->some View{
         HStack(spacing: 14) {
+            Spacer()
             ForEach(0..<6, id: \.self){index in
-                VStack(spacing: 8){
-                    TextField("", text: $phoneAuthData.otpFields[index]).keyboardType(.numberPad).textContentType(.oneTimeCode).multilineTextAlignment(.center).focused($activeField, equals: activeStateForIndex(index: index))
+                VStack(spacing: 40){
+                    TextField("", text: $phoneAuthData.otpFields[index]).keyboardType(.numberPad).textContentType(.oneTimeCode).multilineTextAlignment(.center).focused($activeField, equals: activeStateForIndex(index: index)).font(.InterTitle2).foregroundColor(.ishqTextColor)
                     
-                    Rectangle().fill(activeField == activeStateForIndex(index: index) ? .blue : .gray.opacity(0.3)).frame(height: 4)
-                }.frame(width: 40)
+                    Rectangle().fill(Color.ishqTextColor).frame(height: 2)
+                }
             }
+            Spacer()
         }
         
     }
@@ -122,8 +181,15 @@ struct PhoneVerification: View {
 
 @available(iOS 15.0, *)
 struct PhoneVerification_Previews: PreviewProvider {
+
     static var previews: some View {
-        PhoneVerification().environmentObject(SignInWithPhoneNumberCoordinator())
+        Group {
+            
+            PhoneVerification().environmentObject(SignInWithPhoneNumberCoordinator())
+            
+            PhoneVerification().environmentObject(SignInWithPhoneNumberCoordinator()).environment(\.colorScheme, .dark)
+        }
+        
     }
 }
 
@@ -137,13 +203,3 @@ enum OTPField{
 }
 
 
-struct CodeView: View {
-    var code: String
-    var body: some View{
-        VStack(spacing: 10) {
-            Text(code).foregroundColor(Color.black).fontWeight(.bold).font(.title2).frame(height: 45).keyboardType(.numberPad)
-            
-            Capsule().fill(Color.gray.opacity(0.5)).frame( height: 4)
-        }
-    }
-}

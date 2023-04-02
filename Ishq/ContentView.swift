@@ -18,7 +18,9 @@ struct ContentView: View {
     @State var accessToken: String = ""
     @State var error: String = ""
     @AppStorage("auth_status") var auth_status = false
+   
     var body: some View {
+        
         NavigationView {
             if auth_status{
                 HomeScreen()
