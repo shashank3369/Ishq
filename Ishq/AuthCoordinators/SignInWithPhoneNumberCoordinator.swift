@@ -23,7 +23,7 @@ class SignInWithPhoneNumberCoordinator: ObservableObject {
     //MARK: OTP Credentials
     @Published var verificationCode: String = ""
     
-    @Published var isLoading: Bool = true
+    @Published var isLoading: Bool = false
     
     @Published var navigationTag: String?
     @AppStorage("auth_status") var auth_status = false

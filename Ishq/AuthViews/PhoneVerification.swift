@@ -51,27 +51,14 @@ struct PhoneVerification: View {
                             
                             HStack {
                                 Spacer()
-                                Group {
-                                    if phoneAuthData.isLoading {
-                                        Circle()
-                                                          .trim(from: 0, to: 0.4)
-                                                          .stroke(style: StrokeStyle(lineWidth: 2, lineCap: .round, lineJoin: .round))
-                                                          .foregroundColor(.callToActionColor)
-                                                          .frame(width: 25, height: 25)
-                                                          .rotationEffect(Angle(degrees: phoneAuthData.isLoading ? 0 : 360))
-                                                          .animation(Animation.linear(duration: 1).repeatForever(autoreverses: false))
-                                    } else {
-                                        Button {
+                                
+                                Button {
                                                         Task{await phoneAuthData.verifyOTP()}
                                                     } label: {
                                                         Image("chevron-right").padding(.horizontal, 20)
                                         
                                                             .padding(.vertical, 20).background(Color.callToActionColor).cornerRadius(40)
                                                     }.padding(.trailing, 15)
-                                    }
-                                }
-                                
-                                
                             }
                         }.padding().background(Color.ishqBackgroundColor)
                     }
