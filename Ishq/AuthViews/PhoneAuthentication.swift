@@ -11,60 +11,109 @@ import iPhoneNumberField
 @available(iOS 15.0, *)
 struct PhoneAuthentication: View {
     @StateObject var phoneAuthData = SignInWithPhoneNumberCoordinator()
-    @State var isEditing: Bool = false
+    @FocusState private var keyboardFocused: Bool
+    @Environment(\.dismiss) private var dismiss
+    
     @available(iOS 15.0, *)
     var body: some View {
-        VStack {
-            VStack{
-                Text("Continue with Phone").font(.title2).fontWeight(.bold).foregroundColor(.black).padding()
-                
-                Text("You'll receive a 4 digit code\n to verify next.").font(.title2).foregroundColor(.gray).multilineTextAlignment(.center).padding()
-                HStack {
-                    VStack(alignment: .leading, spacing: 6) {
-                        Text("Enter your phone number").font(.caption).foregroundColor(.gray)
-                        
-                        iPhoneNumberField("(000) 000-0000", text: $phoneAuthData.phoneNumber)
-                                    .font(UIFont(size: 30, weight: .light, design: .monospaced))
-                                    .maximumDigits(10)
-                                    .foregroundColor(Color.pink)
-                                    .clearButtonMode(.whileEditing)
-                                    .accentColor(Color.orange)
-                                    .padding()
-                                    .background(Color.white)
-                                    .cornerRadius(10)
-                                    .shadow(color:.gray, radius: 10)
-                                    .padding().keyboardType(.numberPad)
-                        
-                        Spacer(minLength: 0)
+        ZStack {
+            Color.ishqBackgroundColor.ignoresSafeArea()
+            VStack {
+                VStack{
+                    HStack {
+                        Spacer()
                         
                         Button {
-                            Task{await phoneAuthData.sendOTP()}
+                            dismiss()
                         } label: {
-//                            NavigationLink(destination: PhoneVerification(phoneAuthData: phoneAuthData)) {
-                            Text("Continue").foregroundColor(.black).padding(.vertical, 18).padding(.horizontal, 38).background(Color("black")).cornerRadius(15)
-                            //}
-                        }
-                       
-                    }.padding().background(Color.white)
-                }
-
-            }.frame(height: UIScreen.main.bounds.height/1.8).background(Color.white).cornerRadius(20)
+                            Image("close").padding(.horizontal, 5)
+                                .padding(.vertical, 5).background(Color.ishqBackgroundColor)
+                        }.padding(.trailing, 0)
+                    }
+                    HStack {
+                        Text("What's your phone number?").font(.BaskervilleTitle).foregroundColor(.ishqTextColor).padding()
+                        Spacer()
+                    }.padding()
+                    HStack {
+                        VStack(alignment: .leading, spacing: 10) {
+                            HStack {
+                                
+                                Text("+1").font(.InterTitle2)
+                                    .padding()
+                                
+                                iPhoneNumberField("", text: $phoneAuthData.phoneNumber)
+                                    .font(UIFont(name: "Inter-Regular", size: 20))
+                                    .maximumDigits(10)
+                                    .foregroundColor(Color.ishqTextColor)
+                                    .clearButtonMode(.whileEditing)
+                                    .accentColor(Color.callToActionColor)
+                                    .padding()
+                                    .background(Color.ishqBackgroundColor)
+                                    .padding().focused($keyboardFocused).keyboardType(.numberPad).onAppear {
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                                            keyboardFocused = true
+                                        }
+                                    }
+                            }
+                            HStack {
+                                Text("Ishq will send you a text with a verification code. Message and data rates may apply.").font(.InterBody).fixedSize(horizontal: false, vertical: true).foregroundColor(Color.gray).padding()
+                            }
+                            
+                            
+                            HStack {
+                                Spacer()
+                                Group {
+                                    if phoneAuthData.isLoading {
+                                        Circle()
+                                                          .trim(from: 0, to: 0.4)
+                                                          .stroke(style: StrokeStyle(lineWidth: 2, lineCap: .round, lineJoin: .round))
+                                                          .foregroundColor(.callToActionColor)
+                                                          .frame(width: 25, height: 25)
+                                                          .rotationEffect(Angle(degrees: phoneAuthData.isLoading ? 0 : 360))
+                                                          .animation(Animation.linear(duration: 1).repeatForever(autoreverses: false))
+                                    } else {
+                                        Button {
+                                                        Task{await phoneAuthData.verifyOTP()}
+                                                    } label: {
+                                                        Image("chevron-right").padding(.horizontal, 20)
+                                        
+                                                            .padding(.vertical, 20).background(Color.callToActionColor).cornerRadius(40)
+                                                    }.padding(.trailing, 15)
+                                    }
+                                }
+                                
+                                
+                            
+                            }
+                        }.padding().background(Color.ishqBackgroundColor)
+                    }
+                    
+                }.frame(height: UIScreen.main.bounds.height/1.8).background(Color.ishqBackgroundColor).cornerRadius(20)
+                
+                Spacer()
+                
+            }.background(Color.ishqBackgroundColor).navigationBarBackButtonHidden(true).navigationBarHidden(true).padding().frame(maxHeight: .infinity, alignment: .top).background{
+                NavigationLink(tag: "PHONE_VERIFICATION", selection: $phoneAuthData.navigationTag) {
+                    PhoneVerification().environmentObject(phoneAuthData)
+                } label: {} .labelsHidden()
+            }
             
-            Spacer()
-            
-        }.background(Color("bg").ignoresSafeArea(.all, edges: .bottom)).navigationTitle("Login").padding().frame(maxHeight: .infinity, alignment: .top).background{
-            NavigationLink(tag: "PHONE_VERIFICATION", selection: $phoneAuthData.navigationTag) {
-                PhoneVerification().environmentObject(phoneAuthData)
-            } label: {} .labelsHidden()
         }
-    
-        }
+        
     }
+    
+}
 
 
 @available(iOS 15.0, *)
 struct PhoneAuthentication_Previews: PreviewProvider {
     static var previews: some View {
-        PhoneAuthentication()
+        Group {
+                    PhoneAuthentication()
+                    
+                    PhoneAuthentication()
+                        .environment(\.colorScheme, .dark)
+                }
     }
 }
+
