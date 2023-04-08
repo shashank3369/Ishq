@@ -20,7 +20,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             if auth_status{
-                Text("Home").navigationTitle("Home")
+                HomeScreen()
             } else {
                 
             VStack {

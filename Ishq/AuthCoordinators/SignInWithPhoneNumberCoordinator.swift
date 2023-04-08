@@ -91,7 +91,7 @@ class SignInWithPhoneNumberCoordinator: ObservableObject {
                     print("Realm user could not be retrieved: (\(String(describing: error)))\n")
                     completionHandler(false,error)
                 } else { // a Realm sync user could be retrieved
-                    print("Received a Realm user: \(String(describing: realmUser?.id))")
+                    print("Received a Realm user: \(String(describing: realmUser?.customData))")
                     guard let realmUser = realmUser else { return }
                     //guard let firebaseUserId = getCurrentFirebaseId() else { return }
                     let realmUserId = realmUser.id
@@ -129,6 +129,7 @@ class SignInWithPhoneNumberCoordinator: ObservableObject {
                         case .success(let user): // login to MongoDB Realm was successful
                             print("Successfully logged in as user \(user)")
                             let user = self.app.currentUser
+                            
                             completionHandler(user,nil)
                         }
                     })
@@ -138,5 +139,23 @@ class SignInWithPhoneNumberCoordinator: ObservableObject {
                 }
             }
         }
+    
+    func logOut() {
+        do {
+            if((Auth.auth().currentUser) != nil) { //if there is a firebase user (phoneAuth), log them out
+                try Auth.auth().signOut()
+            }
+            app.currentUser?.logOut { [self] (error) in
+                print("It reached inside log out")
+                DispatchQueue.main.async { [self] in
+                   auth_status = false
+                }
+            }
+        } catch let signOutError as NSError {
+          print("Error signing out: %@", signOutError)
+        }
+          
+        
+    }
 }
 
