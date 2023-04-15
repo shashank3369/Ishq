@@ -10,6 +10,8 @@ import RealmSwift
 
 struct HomeScreen: View {
     @StateObject var phoneAuthData = SignInWithPhoneNumberCoordinator()
+    @StateObject private var vm = UserViewModel()
+    
     var body: some View {
         
         VStack {
@@ -19,7 +21,7 @@ struct HomeScreen: View {
                 Text("Log Out").foregroundColor(.black).padding(.vertical, 18).padding(.horizontal, 38).background(Color.white).cornerRadius(15)
                 //}
             }
-        }
+        }.onAppear(perform: vm.fetchUserDetails)
         
     }
 }
