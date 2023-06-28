@@ -73,7 +73,7 @@ struct PhoneAuthentication: View {
                                                           .animation(Animation.linear(duration: 1).repeatForever(autoreverses: false))
                                     } else {
                                         Button {
-                                                        Task{await phoneAuthData.verifyOTP()}
+                                            Task{await phoneAuthData.sendOTP()}
                                                     } label: {
                                                         Image("chevron-right").padding(.horizontal, 20)
                                         

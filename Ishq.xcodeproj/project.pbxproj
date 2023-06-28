@@ -23,6 +23,9 @@
 		3AA7D949292335F700BD6E2B /* FirebaseDynamicLinks in Frameworks */ = {isa = PBXBuildFile; productRef = 3AA7D948292335F700BD6E2B /* FirebaseDynamicLinks */; };
 		3AA7D94B292335F700BD6E2B /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 3AA7D94A292335F700BD6E2B /* FirebaseMessaging */; };
 		3AA7D94D292335F700BD6E2B /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 3AA7D94C292335F700BD6E2B /* FirebaseStorage */; };
+		3AD339AB29F6FB4E0050F70D /* ChooseUserTypeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD339AA29F6FB4E0050F70D /* ChooseUserTypeScreen.swift */; };
+		3ADBAC142A00BDFF00AFCFE1 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADBAC132A00BDFF00AFCFE1 /* OnboardingViewModel.swift */; };
+		3ADBAC162A00BF4500AFCFE1 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADBAC152A00BF4500AFCFE1 /* Onboarding.swift */; };
 		3AF309AA2932E780003D1301 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AF309A92932E780003D1301 /* GoogleService-Info.plist */; };
 		D04E679E29219B370058BC48 /* IshqApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04E679D29219B370058BC48 /* IshqApp.swift */; };
 		D04E67A029219B370058BC48 /* PhoneAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04E679F29219B370058BC48 /* PhoneAuthentication.swift */; };
@@ -65,6 +68,9 @@
 		3A72892D29304A4C00158275 /* PhoneVerification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneVerification.swift; sourceTree = "<group>"; };
 		3A94F27829AC0E3D00EB4D99 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		3A94F27B29AD5A4F00EB4D99 /* ColorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
+		3AD339AA29F6FB4E0050F70D /* ChooseUserTypeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseUserTypeScreen.swift; sourceTree = "<group>"; };
+		3ADBAC132A00BDFF00AFCFE1 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		3ADBAC152A00BF4500AFCFE1 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		3AF309A82932B814003D1301 /* Ishq.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Ishq.entitlements; sourceTree = "<group>"; };
 		3AF309A92932E780003D1301 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D04E679A29219B370058BC48 /* Ishq.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ishq.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,6 +150,7 @@
 			children = (
 				3A17B37E293AE383005AAB8D /* HomeScreen.swift */,
 				3A94F27829AC0E3D00EB4D99 /* LoginView.swift */,
+				3AD339AA29F6FB4E0050F70D /* ChooseUserTypeScreen.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -248,6 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				D0A40E2C29E1EE9E0026DD8D /* UserViewModel.swift */,
+				3ADBAC132A00BDFF00AFCFE1 /* OnboardingViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -256,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				D0A40E2F29E1EEDB0026DD8D /* User.swift */,
+				3ADBAC152A00BF4500AFCFE1 /* Onboarding.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -414,13 +423,16 @@
 				D0A40E2D29E1EE9E0026DD8D /* UserViewModel.swift in Sources */,
 				3A94F27C29AD5A4F00EB4D99 /* ColorManager.swift in Sources */,
 				3A72892E29304A4C00158275 /* PhoneVerification.swift in Sources */,
+				3AD339AB29F6FB4E0050F70D /* ChooseUserTypeScreen.swift in Sources */,
 				D04E679E29219B370058BC48 /* IshqApp.swift in Sources */,
 				3A94F27929AC0E3D00EB4D99 /* LoginView.swift in Sources */,
 				3A213553292D68BB00C3CB16 /* ContentView.swift in Sources */,
 				3A1B0BC529B5383C00BF685B /* FontManager.swift in Sources */,
+				3ADBAC142A00BDFF00AFCFE1 /* OnboardingViewModel.swift in Sources */,
 				3A17B37F293AE383005AAB8D /* HomeScreen.swift in Sources */,
 				3A728929292FE5CE00158275 /* SignInWithPhoneNumberCoordinator.swift in Sources */,
 				D08589632932FF43004F555A /* SignInWithAppleCoordinator.swift in Sources */,
+				3ADBAC162A00BF4500AFCFE1 /* Onboarding.swift in Sources */,
 				D08589602932FE59004F555A /* SignInWithAppleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

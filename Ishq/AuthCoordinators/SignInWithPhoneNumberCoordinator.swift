@@ -38,7 +38,7 @@ class SignInWithPhoneNumberCoordinator: ObservableObject {
             
             print("Attempting to send phone number ")
             let result = try await PhoneAuthProvider.provider().verifyPhoneNumber("+1\(phoneNumber)", uiDelegate: nil)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+            DispatchQueue.main.async {
                 self.isLoading = false
                 self.verificationCode = result
                 self.navigationTag = "PHONE_VERIFICATION"
@@ -58,7 +58,10 @@ class SignInWithPhoneNumberCoordinator: ObservableObject {
     
     func verifyOTP()async{
         do{
-            self.isLoading = true
+            DispatchQueue.main.async {
+                self.isLoading = true
+            }
+            
             print("ATTEMPTING TO VERIFY CODE")
             let credential = PhoneAuthProvider.provider().credential(withVerificationID: verificationCode, verificationCode: otpText)
             let _ = try await Auth.auth().signIn(with: credential)

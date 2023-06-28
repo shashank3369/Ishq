@@ -65,7 +65,6 @@ struct PhoneVerification: View {
                     
                 }.frame(height: UIScreen.main.bounds.height/1.8).background(Color.ishqBackgroundColor).cornerRadius(20)
                 
-                Spacer()
                 
             }.background(Color.ishqBackgroundColor).frame(maxHeight: .infinity, alignment: .top).navigationBarBackButtonHidden(true).navigationBarHidden(true).padding().navigationTitle("Verification").onChange(of: phoneAuthData.otpFields) { newValue in OTPCondition(value: newValue)
                 
