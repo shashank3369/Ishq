@@ -7,9 +7,10 @@
 
 import SwiftUI
 
+
 struct ChooseUserTypeScreen: View {
    
-    @State private var selection = 0
+    @StateObject var onboardingData = OnboardingViewModel()
     var body: some View {
         GeometryReader { geometry in
             ZStack {
@@ -28,7 +29,7 @@ struct ChooseUserTypeScreen: View {
                     HStack{
                         VStack{
                             Text("Welcome to Ishq! Tell us why you're here.")
-                                .font(.BaskervilleTitle2)
+                                .font(.BaskervilleTitle)
                                 .padding()
                         }
                         
@@ -36,29 +37,29 @@ struct ChooseUserTypeScreen: View {
                     }.padding()
                     
                     
-                    Picker(selection: $selection, label: Text("").font(.BaskervilleTitle)) {
+                    Picker(selection: $onboardingData.userType, label: Text("").font(.BaskervilleTitle)) {
                         Text("Date and find my match").font(.BaskervilleTitle).tag(0)
-                        Text("Play matchmaker").tag(1)
+                        Text("Be a matchmaker").font(.BaskerVilleItalicTitle).tag(1)
                     }
                     .pickerStyle(SegmentedPickerStyle())
                     .padding()
                     
-                    if selection == 0 {
+                    if onboardingData.userType == 0 {
                         GridStack(rows: 2, columns: 2, rowSpacing: 60, columnSpacing: 50) { row, col in
                                            VStack {
                                                switch (row, col) {
                                                case (0, 0):
                                                    ImageView(imageName: "three-profiles")
-                                                   Text("View three profiles each day").font(.InterBody)
+                                                   Text("View three profiles each day").font(.InterBody).multilineTextAlignment(.center)
                                                case (0, 1):
                                                    ImageView(imageName: "match-and-chat")
-                                                   Text("Chat with one person at a time").font(.InterBody)
+                                                   Text("Chat with one person at a time").font(.InterBody).multilineTextAlignment(.center)
                                                case (1, 0):
                                                    ImageView(imageName: "invite-friends")
-                                                   Text("Invite your friends to be matchmakers").font(.InterBody)
+                                                   Text("Invite your friends to be matchmakers").font(.InterBody).multilineTextAlignment(.center)
                                                case (1, 1):
                                                    ImageView(imageName: "send-profiles")
-                                                   Text("Receive profiles from people you trust").font(.InterBody)
+                                                   Text("Receive profiles from people you trust").font(.InterBody).multilineTextAlignment(.center)
                                                default:
                                                    EmptyView()
                                                }
@@ -66,22 +67,22 @@ struct ChooseUserTypeScreen: View {
                                        }
                                        .padding(.horizontal, 10)
                                        .padding(.vertical)
-                    } else if selection == 1 {
+                    } else if onboardingData.userType == 1 {
                         GridStack(rows: 2, columns: 2, rowSpacing: 60, columnSpacing: 50) { row, col in
                                            VStack {
                                                switch (row, col) {
                                                case (0, 0):
                                                    ImageView(imageName: "three-profiles")
-                                                   Text("View three profiles each day").font(.InterBody)
+                                                   Text("View three profiles each day").font(.InterBody).multilineTextAlignment(.center)
                                                case (0, 1):
                                                    ImageView(imageName: "invite-friends")
-                                                   Text("Invite singles to join the app").font(.InterBody)
+                                                   Text("Invite singles to join the app").font(.InterBody).multilineTextAlignment(.center)
                                                case (1, 0):
                                                    ImageView(imageName: "send-profiles")
-                                                   Text("Send profiles to your friends").font(.InterBody)
+                                                   Text("Send profiles to your friends").font(.InterBody).multilineTextAlignment(.center)
                                                case (1, 1):
                                                    ImageView(imageName: "save-profiles")
-                                                   Text("Save profiles to keep track").font(.InterBody)
+                                                   Text("Save profiles to keep track").font(.InterBody).multilineTextAlignment(.center)
                                                default:
                                                    EmptyView()
                                                }
@@ -95,6 +96,7 @@ struct ChooseUserTypeScreen: View {
                     HStack {
                         Spacer()
                         Button {
+                            Task{onboardingData.selectUserType()}
                             
                         } label: {
                             Image("chevron-right").padding(.horizontal, 20)
@@ -102,7 +104,12 @@ struct ChooseUserTypeScreen: View {
                                 .padding(.vertical, 20).background(Color.callToActionColor).cornerRadius(40)
                         }.padding(.trailing, 15)
                     }
-                }.background(Color.ishqBackgroundColor).frame(maxHeight: .infinity, alignment: .top).navigationBarBackButtonHidden(true).navigationBarHidden(true).padding().navigationTitle("Choose User Type")
+                }.background(Color.ishqBackgroundColor).navigationBarBackButtonHidden(true).navigationBarHidden(true).padding().frame(maxHeight: .infinity, alignment: .top).background{
+                    NavigationLink(tag: "SETUP_SINGLES_PROFILE", selection: $onboardingData.navigationTag) {
+                        SetupSinglesProfileScreen().environmentObject(onboardingData)
+                    } label: {} .labelsHidden()
+                    
+                }
             }
         }
     }

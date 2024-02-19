@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,7 +11,17 @@
 		3A1B0BC529B5383C00BF685B /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1B0BC429B5383B00BF685B /* FontManager.swift */; };
 		3A213553292D68BB00C3CB16 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A213552292D68BB00C3CB16 /* ContentView.swift */; };
 		3A3AA96429A2D1F00010637C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A3AA96329A2D1F00010637C /* LaunchScreen.storyboard */; };
-		3A728929292FE5CE00158275 /* SignInWithPhoneNumberCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A728928292FE5CE00158275 /* SignInWithPhoneNumberCoordinator.swift */; };
+		3A6DDD2C2B81673500CD315C /* Functions in Frameworks */ = {isa = PBXBuildFile; productRef = 3A6DDD2B2B81673500CD315C /* Functions */; };
+		3A6DDD2E2B81673500CD315C /* PostgREST in Frameworks */ = {isa = PBXBuildFile; productRef = 3A6DDD2D2B81673500CD315C /* PostgREST */; };
+		3A6DDD302B81673500CD315C /* Realtime in Frameworks */ = {isa = PBXBuildFile; productRef = 3A6DDD2F2B81673500CD315C /* Realtime */; };
+		3A6DDD322B81673500CD315C /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = 3A6DDD312B81673500CD315C /* Storage */; };
+		3A6DDD342B81673500CD315C /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 3A6DDD332B81673500CD315C /* Supabase */; };
+		3A6DDD362B81BD8900CD315C /* SupabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6DDD352B81BD8900CD315C /* SupabaseManager.swift */; };
+		3A6DDD382B81C95400CD315C /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6DDD372B81C95400CD315C /* KeyboardManager.swift */; };
+		3A6DDD3A2B82B5F400CD315C /* PhoneNumberViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6DDD392B82B5F400CD315C /* PhoneNumberViewModel.swift */; };
+		3A6DDD3D2B82E2B300CD315C /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6DDD3C2B82E2B300CD315C /* ViewModifiers.swift */; };
+		3A6DDD3F2B83ACE800CD315C /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6DDD3E2B83ACE800CD315C /* AuthManager.swift */; };
+		3A728929292FE5CE00158275 /* PhoneAuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A728928292FE5CE00158275 /* PhoneAuthViewModel.swift */; };
 		3A72892C2930419200158275 /* iPhoneNumberField in Frameworks */ = {isa = PBXBuildFile; productRef = 3A72892B2930419200158275 /* iPhoneNumberField */; };
 		3A72892E29304A4C00158275 /* PhoneVerification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A72892D29304A4C00158275 /* PhoneVerification.swift */; };
 		3A94F27929AC0E3D00EB4D99 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A94F27829AC0E3D00EB4D99 /* LoginView.swift */; };
@@ -23,9 +33,15 @@
 		3AA7D949292335F700BD6E2B /* FirebaseDynamicLinks in Frameworks */ = {isa = PBXBuildFile; productRef = 3AA7D948292335F700BD6E2B /* FirebaseDynamicLinks */; };
 		3AA7D94B292335F700BD6E2B /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 3AA7D94A292335F700BD6E2B /* FirebaseMessaging */; };
 		3AA7D94D292335F700BD6E2B /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 3AA7D94C292335F700BD6E2B /* FirebaseStorage */; };
+		3AB029F12ACA3D5900F9DA5B /* SetupSinglesProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB029F02ACA3D5900F9DA5B /* SetupSinglesProfileScreen.swift */; };
+		3AB0C2B72AE5A951004AD78E /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AB0C2B62AE5A951004AD78E /* Inter-Regular.ttf */; };
+		3AB0C2B92AE5A963004AD78E /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AB0C2B82AE5A963004AD78E /* Poppins-Regular.ttf */; };
+		3AB0C2BB2AE5A96F004AD78E /* LibreBaskerville-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AB0C2BA2AE5A96F004AD78E /* LibreBaskerville-Italic.ttf */; };
+		3AB0C2BD2AE5A979004AD78E /* LibreBaskerville-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AB0C2BC2AE5A979004AD78E /* LibreBaskerville-Regular.ttf */; };
 		3AD339AB29F6FB4E0050F70D /* ChooseUserTypeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD339AA29F6FB4E0050F70D /* ChooseUserTypeScreen.swift */; };
 		3ADBAC142A00BDFF00AFCFE1 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADBAC132A00BDFF00AFCFE1 /* OnboardingViewModel.swift */; };
 		3ADBAC162A00BF4500AFCFE1 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADBAC152A00BF4500AFCFE1 /* Onboarding.swift */; };
+		3ADBAC182A9BBFFB00AFCFE1 /* SinglesOnboardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADBAC172A9BBFF800AFCFE1 /* SinglesOnboardingScreen.swift */; };
 		3AF309AA2932E780003D1301 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AF309A92932E780003D1301 /* GoogleService-Info.plist */; };
 		D04E679E29219B370058BC48 /* IshqApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04E679D29219B370058BC48 /* IshqApp.swift */; };
 		D04E67A029219B370058BC48 /* PhoneAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04E679F29219B370058BC48 /* PhoneAuthentication.swift */; };
@@ -37,7 +53,6 @@
 		D085895D2932D002004F555A /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D085895C2932D002004F555A /* RealmSwift */; };
 		D08589602932FE59004F555A /* SignInWithAppleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D085895F2932FE59004F555A /* SignInWithAppleView.swift */; };
 		D08589632932FF43004F555A /* SignInWithAppleCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08589622932FF43004F555A /* SignInWithAppleCoordinator.swift */; };
-		D0A40E2929E1E8550026DD8D /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = D0A40E2829E1E8540026DD8D /* Fonts */; };
 		D0A40E2D29E1EE9E0026DD8D /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A40E2C29E1EE9E0026DD8D /* UserViewModel.swift */; };
 		D0A40E3029E1EEDB0026DD8D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A40E2F29E1EEDB0026DD8D /* User.swift */; };
 /* End PBXBuildFile section */
@@ -64,13 +79,24 @@
 		3A1B0BC429B5383B00BF685B /* FontManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
 		3A213552292D68BB00C3CB16 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3A3AA96329A2D1F00010637C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		3A728928292FE5CE00158275 /* SignInWithPhoneNumberCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithPhoneNumberCoordinator.swift; sourceTree = "<group>"; };
+		3A6DDD352B81BD8900CD315C /* SupabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupabaseManager.swift; sourceTree = "<group>"; };
+		3A6DDD372B81C95400CD315C /* KeyboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardManager.swift; sourceTree = "<group>"; };
+		3A6DDD392B82B5F400CD315C /* PhoneNumberViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberViewModel.swift; sourceTree = "<group>"; };
+		3A6DDD3C2B82E2B300CD315C /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
+		3A6DDD3E2B83ACE800CD315C /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		3A728928292FE5CE00158275 /* PhoneAuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneAuthViewModel.swift; sourceTree = "<group>"; };
 		3A72892D29304A4C00158275 /* PhoneVerification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneVerification.swift; sourceTree = "<group>"; };
 		3A94F27829AC0E3D00EB4D99 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		3A94F27B29AD5A4F00EB4D99 /* ColorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
+		3AB029F02ACA3D5900F9DA5B /* SetupSinglesProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupSinglesProfileScreen.swift; sourceTree = "<group>"; };
+		3AB0C2B62AE5A951004AD78E /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
+		3AB0C2B82AE5A963004AD78E /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		3AB0C2BA2AE5A96F004AD78E /* LibreBaskerville-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LibreBaskerville-Italic.ttf"; sourceTree = "<group>"; };
+		3AB0C2BC2AE5A979004AD78E /* LibreBaskerville-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LibreBaskerville-Regular.ttf"; sourceTree = "<group>"; };
 		3AD339AA29F6FB4E0050F70D /* ChooseUserTypeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseUserTypeScreen.swift; sourceTree = "<group>"; };
 		3ADBAC132A00BDFF00AFCFE1 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		3ADBAC152A00BF4500AFCFE1 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
+		3ADBAC172A9BBFF800AFCFE1 /* SinglesOnboardingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinglesOnboardingScreen.swift; sourceTree = "<group>"; };
 		3AF309A82932B814003D1301 /* Ishq.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Ishq.entitlements; sourceTree = "<group>"; };
 		3AF309A92932E780003D1301 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D04E679A29219B370058BC48 /* Ishq.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ishq.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,7 +114,6 @@
 		D05104F5293282600081DE21 /* Ishq.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Ishq.entitlements; sourceTree = "<group>"; };
 		D085895F2932FE59004F555A /* SignInWithAppleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleView.swift; sourceTree = "<group>"; };
 		D08589622932FF43004F555A /* SignInWithAppleCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleCoordinator.swift; sourceTree = "<group>"; };
-		D0A40E2829E1E8540026DD8D /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
 		D0A40E2C29E1EE9E0026DD8D /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		D0A40E2F29E1EEDB0026DD8D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -98,9 +123,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A6DDD2E2B81673500CD315C /* PostgREST in Frameworks */,
 				3AA7D94B292335F700BD6E2B /* FirebaseMessaging in Frameworks */,
+				3A6DDD322B81673500CD315C /* Storage in Frameworks */,
 				3A72892C2930419200158275 /* iPhoneNumberField in Frameworks */,
 				3AA7D943292335F700BD6E2B /* FirebaseAnalyticsSwift in Frameworks */,
+				3A6DDD342B81673500CD315C /* Supabase in Frameworks */,
 				3AA7D945292335F700BD6E2B /* FirebaseAuth in Frameworks */,
 				3AA7D941292335F700BD6E2B /* FirebaseAnalytics in Frameworks */,
 				3AA7D94D292335F700BD6E2B /* FirebaseStorage in Frameworks */,
@@ -108,6 +136,8 @@
 				3AA7D949292335F700BD6E2B /* FirebaseDynamicLinks in Frameworks */,
 				D085895D2932D002004F555A /* RealmSwift in Frameworks */,
 				D085895B2932D002004F555A /* Realm in Frameworks */,
+				3A6DDD302B81673500CD315C /* Realtime in Frameworks */,
+				3A6DDD2C2B81673500CD315C /* Functions in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,11 +166,22 @@
 			path = Launch;
 			sourceTree = "<group>";
 		};
+		3A6DDD3B2B82E29D00CD315C /* ViewModifiers */ = {
+			isa = PBXGroup;
+			children = (
+				3A6DDD3C2B82E2B300CD315C /* ViewModifiers.swift */,
+			);
+			path = ViewModifiers;
+			sourceTree = "<group>";
+		};
 		3A94F27A29AD59E400EB4D99 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				3A94F27B29AD5A4F00EB4D99 /* ColorManager.swift */,
 				3A1B0BC429B5383B00BF685B /* FontManager.swift */,
+				3A6DDD352B81BD8900CD315C /* SupabaseManager.swift */,
+				3A6DDD372B81C95400CD315C /* KeyboardManager.swift */,
+				3A6DDD3E2B83ACE800CD315C /* AuthManager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -151,8 +192,21 @@
 				3A17B37E293AE383005AAB8D /* HomeScreen.swift */,
 				3A94F27829AC0E3D00EB4D99 /* LoginView.swift */,
 				3AD339AA29F6FB4E0050F70D /* ChooseUserTypeScreen.swift */,
+				3ADBAC172A9BBFF800AFCFE1 /* SinglesOnboardingScreen.swift */,
+				3AB029F02ACA3D5900F9DA5B /* SetupSinglesProfileScreen.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		3AB0C2B52AE5A93B004AD78E /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				3AB0C2BA2AE5A96F004AD78E /* LibreBaskerville-Italic.ttf */,
+				3AB0C2BC2AE5A979004AD78E /* LibreBaskerville-Regular.ttf */,
+				3AB0C2B82AE5A963004AD78E /* Poppins-Regular.ttf */,
+				3AB0C2B62AE5A951004AD78E /* Inter-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		D04E679129219B370058BC48 = {
@@ -178,10 +232,11 @@
 		D04E679C29219B370058BC48 /* Ishq */ = {
 			isa = PBXGroup;
 			children = (
+				3A6DDD3B2B82E29D00CD315C /* ViewModifiers */,
+				3AB0C2B52AE5A93B004AD78E /* Fonts */,
 				D0A40E2E29E1EEC50026DD8D /* Models */,
 				D0A40E2B29E1EE900026DD8D /* ViewModels */,
 				D0A40E2A29E1ECDD0026DD8D /* Networking */,
-				D0A40E2829E1E8540026DD8D /* Fonts */,
 				3A94F27A29AD59E400EB4D99 /* Helpers */,
 				3A3AA96229A2CFC80010637C /* Launch */,
 				3AF309A82932B814003D1301 /* Ishq.entitlements */,
@@ -238,7 +293,6 @@
 		D08589612932FF1C004F555A /* AuthCoordinators */ = {
 			isa = PBXGroup;
 			children = (
-				3A728928292FE5CE00158275 /* SignInWithPhoneNumberCoordinator.swift */,
 				D08589622932FF43004F555A /* SignInWithAppleCoordinator.swift */,
 			);
 			path = AuthCoordinators;
@@ -254,8 +308,10 @@
 		D0A40E2B29E1EE900026DD8D /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				3A728928292FE5CE00158275 /* PhoneAuthViewModel.swift */,
 				D0A40E2C29E1EE9E0026DD8D /* UserViewModel.swift */,
 				3ADBAC132A00BDFF00AFCFE1 /* OnboardingViewModel.swift */,
+				3A6DDD392B82B5F400CD315C /* PhoneNumberViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -296,6 +352,11 @@
 				3A72892B2930419200158275 /* iPhoneNumberField */,
 				D085895A2932D002004F555A /* Realm */,
 				D085895C2932D002004F555A /* RealmSwift */,
+				3A6DDD2B2B81673500CD315C /* Functions */,
+				3A6DDD2D2B81673500CD315C /* PostgREST */,
+				3A6DDD2F2B81673500CD315C /* Realtime */,
+				3A6DDD312B81673500CD315C /* Storage */,
+				3A6DDD332B81673500CD315C /* Supabase */,
 			);
 			productName = Ishq;
 			productReference = D04E679A29219B370058BC48 /* Ishq.app */;
@@ -372,6 +433,7 @@
 				3AA7D93F292335F600BD6E2B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				3A72892A2930419200158275 /* XCRemoteSwiftPackageReference "iPhoneNumberField" */,
 				D08589592932D002004F555A /* XCRemoteSwiftPackageReference "realm-swift" */,
+				3A6DDD2A2B81673500CD315C /* XCRemoteSwiftPackageReference "supabase-swift" */,
 			);
 			productRefGroup = D04E679B29219B370058BC48 /* Products */;
 			projectDirPath = "";
@@ -389,9 +451,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0A40E2929E1E8550026DD8D /* Fonts in Resources */,
 				D04E67A529219B3E0058BC48 /* Preview Assets.xcassets in Resources */,
+				3AB0C2BD2AE5A979004AD78E /* LibreBaskerville-Regular.ttf in Resources */,
+				3AB0C2B72AE5A951004AD78E /* Inter-Regular.ttf in Resources */,
 				3A3AA96429A2D1F00010637C /* LaunchScreen.storyboard in Resources */,
+				3AB0C2B92AE5A963004AD78E /* Poppins-Regular.ttf in Resources */,
+				3AB0C2BB2AE5A96F004AD78E /* LibreBaskerville-Italic.ttf in Resources */,
 				D04E67A229219B3E0058BC48 /* Assets.xcassets in Resources */,
 				3AF309AA2932E780003D1301 /* GoogleService-Info.plist in Resources */,
 			);
@@ -419,18 +484,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0A40E3029E1EEDB0026DD8D /* User.swift in Sources */,
+				3A6DDD3F2B83ACE800CD315C /* AuthManager.swift in Sources */,
+				3AB029F12ACA3D5900F9DA5B /* SetupSinglesProfileScreen.swift in Sources */,
 				D04E67A029219B370058BC48 /* PhoneAuthentication.swift in Sources */,
+				3A6DDD362B81BD8900CD315C /* SupabaseManager.swift in Sources */,
+				3A6DDD3A2B82B5F400CD315C /* PhoneNumberViewModel.swift in Sources */,
 				D0A40E2D29E1EE9E0026DD8D /* UserViewModel.swift in Sources */,
 				3A94F27C29AD5A4F00EB4D99 /* ColorManager.swift in Sources */,
 				3A72892E29304A4C00158275 /* PhoneVerification.swift in Sources */,
 				3AD339AB29F6FB4E0050F70D /* ChooseUserTypeScreen.swift in Sources */,
+				3A6DDD3D2B82E2B300CD315C /* ViewModifiers.swift in Sources */,
 				D04E679E29219B370058BC48 /* IshqApp.swift in Sources */,
 				3A94F27929AC0E3D00EB4D99 /* LoginView.swift in Sources */,
 				3A213553292D68BB00C3CB16 /* ContentView.swift in Sources */,
 				3A1B0BC529B5383C00BF685B /* FontManager.swift in Sources */,
+				3A6DDD382B81C95400CD315C /* KeyboardManager.swift in Sources */,
 				3ADBAC142A00BDFF00AFCFE1 /* OnboardingViewModel.swift in Sources */,
 				3A17B37F293AE383005AAB8D /* HomeScreen.swift in Sources */,
-				3A728929292FE5CE00158275 /* SignInWithPhoneNumberCoordinator.swift in Sources */,
+				3ADBAC182A9BBFFB00AFCFE1 /* SinglesOnboardingScreen.swift in Sources */,
+				3A728929292FE5CE00158275 /* PhoneAuthViewModel.swift in Sources */,
 				D08589632932FF43004F555A /* SignInWithAppleCoordinator.swift in Sources */,
 				3ADBAC162A00BF4500AFCFE1 /* Onboarding.swift in Sources */,
 				D08589602932FE59004F555A /* SignInWithAppleView.swift in Sources */,
@@ -597,7 +669,7 @@
 				DEVELOPMENT_TEAM = 96C79E7E69;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Ishq/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -622,7 +694,7 @@
 				DEVELOPMENT_TEAM = 96C79E7E69;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Ishq/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -761,6 +833,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		3A6DDD2A2B81673500CD315C /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/supabase/supabase-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.1;
+			};
+		};
 		3A72892A2930419200158275 /* XCRemoteSwiftPackageReference "iPhoneNumberField" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/MojtabaHs/iPhoneNumberField.git";
@@ -788,6 +868,31 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		3A6DDD2B2B81673500CD315C /* Functions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3A6DDD2A2B81673500CD315C /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Functions;
+		};
+		3A6DDD2D2B81673500CD315C /* PostgREST */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3A6DDD2A2B81673500CD315C /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = PostgREST;
+		};
+		3A6DDD2F2B81673500CD315C /* Realtime */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3A6DDD2A2B81673500CD315C /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Realtime;
+		};
+		3A6DDD312B81673500CD315C /* Storage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3A6DDD2A2B81673500CD315C /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Storage;
+		};
+		3A6DDD332B81673500CD315C /* Supabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3A6DDD2A2B81673500CD315C /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Supabase;
+		};
 		3A72892B2930419200158275 /* iPhoneNumberField */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3A72892A2930419200158275 /* XCRemoteSwiftPackageReference "iPhoneNumberField" */;

@@ -47,5 +47,12 @@ extension Font {
     static var BaskervilleBody: Font {
         Font.custom("LibreBaskerville-Regular", size: 14, relativeTo: .body)
         }
+    static var BaskerVilleItalicTitle: Font {
+        Font.custom("LibreBaskerville-Italic", size: 32, relativeTo: .title)
+    }
+    static var BaskerVilleItalicBody: Font {
+        Font.custom("LibreBaskerville-Italic", size: 20, relativeTo: .title)
+    }
+    
     
 }
